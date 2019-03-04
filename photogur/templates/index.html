@@ -1,10 +1,13 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
+
     <h1>Pictures</h1>
     {% for picture in pictures %}
       <a href="{% url 'picture_details' id=picture.pk %}">
@@ -16,5 +19,12 @@
         </ul>
       </a>
     {% endfor %}
+
   </body>
 </html>
+  {% endblock %}
+
+
+
+
+{
