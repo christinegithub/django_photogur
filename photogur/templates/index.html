@@ -7,19 +7,18 @@
     <title></title>
   </head>
   <body>
-
-    <h2>Pictures</h2>
+    <div class="picture-list">
     {% for picture in pictures %}
-      <a href="{% url 'picture_details' id=picture.pk %}">
+      <a class="each-picture" href="{% url 'picture_details' id=picture.pk %}">
         <ul>
           <li>
-            <p>{{ picture.title }} | {{ picture.artist }} | Comments: "{{ picture.comments.count }}"</p>
             <img src ="{{ picture.url }}" />
+            <p>{{ picture.title }} by {{ picture.artist }} | Comments: "{{ picture.comments.count }}"</p>
           </li>
         </ul>
       </a>
     {% endfor %}
-
+    </div>
   </body>
 </html>
   {% endblock %}

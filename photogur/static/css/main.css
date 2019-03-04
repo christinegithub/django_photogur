@@ -1,0 +1,44 @@
+.site-header {
+  color: grey;
+  border-top: solid grey 2px;
+  border-bottom: solid grey 2px;
+  font-size: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.site-footer {
+  background: #444141;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.picture-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+p {
+  text-align: left;
+}
+
+img {
+  height: 200px;
+  width: 90%;
+}
+
+.each-picture {
+  border: lightgrey solid 1px;
+  text-align: center;
+  width: 95%;
+  margin: 5px 10px 5px 10px;
+  text-decoration: none;
+  color: grey;
+}
+
+ul li {
+  list-style: none;
+}
