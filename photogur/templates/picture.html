@@ -10,5 +10,12 @@
 
     <img src="{{ picture.url }}" alt="{{ picture.title }}" />
 
+    <h3>Comments</h3>
+    <ul>
+      {% for comment in picture.comments.all %}
+        <li>{{ comment.message }}</li>
+      {% endfor %}
+    </ul>
+
   </body>
 </html>
