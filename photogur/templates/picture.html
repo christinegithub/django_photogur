@@ -8,12 +8,12 @@
   </head>
   <body>
 
-    <h1>{{ picture.title }}</h1>
-    <h2>By {{ picture.artist }}</h2>
+    <h2>{{ picture.title }}</h2>
+    <h3>By {{ picture.artist }}</h3>
 
     <img src="{{ picture.url }}" alt="{{ picture.title }}" />
 
-    <h3>Comments</h3>
+    <h4>Comments</h4>
     <ul>
       {% for comment in picture.comments.all %}
         <li>{{ comment.message }}</li>
