@@ -8,7 +8,6 @@ def picture_page(request):
     response = render(request, 'index.html', context)
     return HttpResponse(response)
 
-
 def picture_show(request, id):
     picture = Picture.objects.get(pk = id)
     context = {'picture': picture}
@@ -24,3 +23,7 @@ def picture_search(request):
 
 def create_comment(request):
     picture = request.POST['picture']
+    comment_name = request.POST['comment-name']
+    comment_message = request.POST['comment-message']
+    comment = Comment.objects.create(picture=Picture.objects.get(id=picture), name=comment_name, message=comment_message)
+    return HttpResponseRedirect('/pictures/'+ picture)
