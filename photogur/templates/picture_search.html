@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Search Results: {{ pictures.count }}</h1>
+    {% for picture in pictures %}
+    <h2>{{ picture.title }}</h2>
+    <h3>By {{ picture.artist }}</h3>
+
+    <img src="{{ picture.url }}" alt="{{ picture.title }}" />
+    {% endfor %}
+  </body>
+</html>
+
+{% endblock %}

@@ -19,6 +19,24 @@
       {% endfor %}
     </ul>
 
+    <form action="{% url 'create_comment' %}" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="picture" value="{{ picture.pk }}">
+
+      <label for="comment-name">
+        <span>Name:</span>
+        <input type="text" id="comment-name" name="comment-name">
+      </label>
+
+      <label for="comment-message">
+        <span>Message:</span>
+        <textarea id="comment-message" name="comment-message"></textarea>
+      </label>
+
+      <input type="submit" name="comment-submit">
+
+    </form>
+
   </body>
 </html>
 {% endblock %}
