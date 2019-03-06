@@ -10,11 +10,11 @@
   <body>
     <div class="picture-list">
     {% for picture in pictures %}
-      <a class="each-picture" href="{% url 'picture_details' id=picture.pk %}">
+      <a class="each-image" href="{% url 'picture_details' id=picture.pk %}">
         <ul>
-          <li>
+          <li class="each-picture">
             <img src ="{{ picture.url }}" />
-            <p>{{ picture.title }} by {{ picture.artist }} | Comments: "{{ picture.comments.count }}"</p>
+            <p class="caption">{{ picture.title }} by {{ picture.artist }} | Comments: {{ picture.comments.count }}</p>
           </li>
         </ul>
       </a>

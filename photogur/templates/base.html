@@ -6,6 +6,12 @@
     <meta charset="utf-8">
     <title>Photogur</title>
 
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Photogur</h1>
+    </header>
+
     <form action="{% url 'picture_search' %}" method="get">
       <label for="picture-search">
         <span>Search:</span>
@@ -14,12 +20,7 @@
 
       <input type="submit" value="Search" />
     </form>
-
-  </head>
-  <body>
-    <header class="site-header">
-      <h1>Photogur</h1>
-    </header>
+    
     {% block content %}
     {% endblock %}
 
