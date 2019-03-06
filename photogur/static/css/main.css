@@ -71,7 +71,7 @@ img {
 }
 
 ul {
-  padding-left: 0px;
+  padding-left: 1em;
 }
 
 .caption {
@@ -79,6 +79,10 @@ ul {
 }
 
 /* CSS for picture_search.html */
+
+.search-list {
+  padding-left: 0px;
+}
 
 .search-results {
   color: grey;
