@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from photogur.models import Picture, Comment
-from photogur.forms import LoginForm
+from photogur.forms import LoginForm, PictureForm
 
 
 def picture_page(request):
@@ -69,4 +69,18 @@ def signup(request):
 
     context = {'form': form}
     response = render(request, 'signup.html', context)
+    return HttpResponse(response)
+
+def new_picture(request):
+    if request.method == 'POST':
+        form = PictureForm(request.POST)
+        if form.is_valid():
+            form.user = request.user
+            form.save()
+            return HttpResponseRedirect('/pictures')
+    else:
+        form = PictureForm()
+
+    context = {'form': form}
+    response = render(request, 'new_picture.html', context)
     return HttpResponse(response)

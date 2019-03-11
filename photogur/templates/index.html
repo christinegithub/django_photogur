@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+    {% csrf_token %}
+    <a href="{% url 'new_picture' %}">Add New Picture</a>
     <div class="picture-list">
     {% for picture in pictures %}
       <a class="each-image" href="{% url 'picture_details' id=picture.pk %}">

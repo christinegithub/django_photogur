@@ -10,6 +10,8 @@
     <h2>{{ picture.title }}</h2>
     <h4>By {{ picture.artist }}</h3>
 
+    <h5>Added by {{ picture.user.username }}</h5>
+
     <img class="picture-image" src="{{ picture.url }}" alt="{{ picture.title }}" />
 
     <h4>Comments</h4>

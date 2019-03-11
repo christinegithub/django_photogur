@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Add New PIcture</title>
+  </head>
+  <body>
+    <h2>Add New Picture</h2>
+    <form action="{% url 'new_picture' %}" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Add Picture</button>
+    </form>
+  </body>
+</html>
+{% endblock %}
