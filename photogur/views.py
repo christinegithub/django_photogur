@@ -1,5 +1,5 @@
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -85,4 +85,11 @@ def new_picture(request):
 
     context = {'form': form}
     response = render(request, 'new_picture.html', context)
+    return HttpResponse(response)
+
+@login_required
+def edit_picture(request, id):
+    picture = get_object_or_404(Picture, pk = id, user = request.user.pk)
+    context = {'picture': picture}
+    response = render(request, 'edit_picture.html', context)
     return HttpResponse(response)
