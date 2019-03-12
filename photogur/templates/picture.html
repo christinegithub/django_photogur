@@ -7,6 +7,10 @@
     <title></title>
   </head>
   <body>
+    {% if user.id is picture.user.pk %}
+      <a href="{% url 'edit_picture' id=picture.pk %}">Edit Picture</a>
+    {% endif %}
+
     <h2>{{ picture.title }}</h2>
     <h4>By {{ picture.artist }}</h3>
 
